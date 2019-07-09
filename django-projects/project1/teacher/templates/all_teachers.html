@@ -11,6 +11,8 @@
 <body>
 	<div class="container">
 		<h2 class="d-flex justify-content-center">All Teachers</h2>
+<button type="submit" class="b-center"><a href="http://127.0.0.1:8000/teacher/add/"> Add Teacher</a></button>		
+
 <table class="table table-bordered table-striped" >
 	
 	<tr>
@@ -18,7 +20,8 @@
 	<th>Last Name</th>
 	<th>Profession</th>
 	<th>Gender</th>
-	
+	<th>Details</th>
+	<th>Edit</th>
 	</tr>
 
 	{% for teacher in teachers%}
@@ -27,6 +30,8 @@
 		<td>{{teacher.last_name}}</td>
 		<td>{{teacher.profession}}</td>
 		<td>{{teacher.gender}}</td>
+		<td><a href="/teacher/view/{{teacher.pk}}/">View More</a></td>
+		<td><a href="/teacher/edit/{{teacher.pk}}/">Edit</a></td>
 	</tr>
 	{% endfor %}
 </table>
